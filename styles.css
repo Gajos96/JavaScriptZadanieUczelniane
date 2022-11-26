@@ -1,0 +1,59 @@
+
+body {
+    background: linear-gradient(white , lightgray , gray, black );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+.tekst{
+  color: red;
+  size: 20px;
+  font-weight: bold;
+}
+.wynik
+{
+  font-family:"Tahoma";
+  font-size: 30px ;
+  font-weight: bold;
+}
+
+.tekstowe
+{
+  font-family: "Courier New" ;
+  font-size: 18px ;
+}
+
+.operator
+{
+  padding: 2px;
+  text-align: center;
+  font-size: 18px ;
+  margin: 2px 2px;
+  height: auto;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.buttonR
+{
+  text-align : right;
+  font-size: 30px ;
+  font-weight: bold;
+  margin-right: 20px;
+  transform : rotate(3.142rad);
+  position : fixed;
+  right: 20px;
+  top: 90%;
+}
+
+.piekno
+{
+  font-family:"Courier New";
+  font-size: 25px ;
+  font-weight: bold;
+  color: darkred;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="styles.css">
+    <title>Prosty Kalkulator</title>
+    <link rel="icon" type="image/x-icon" href="https://imul.math.uni.lodz.pl/~peter/src/guitar.ico">
+<body>
+
+<p class="tekst">#1: <input class="tekstowe" id="a" type="number"></p>
+<p class="tekst">#2: <input class="tekstowe" id="b" type="number"></p>
+
+<p>
+<button class="operator" type="button" onclick="Calculator(this.innerHTML)">+</button>
+<button class="operator" type="button" onclick="Calculator(this.innerHTML)">-</button>
+<button class="operator" type="button" onclick="Calculator(this.innerHTML)">*</button>
+<button class="operator" type="button" onclick="Calculator(this.innerHTML)">/</button>
+<button class="operator" type="button"  onclick="Calculator(this.innerHTML)">x<sup>y</sup></button>
+</p>
+<div>
+<div>
+    <span><p class="tekst">Wynik : </span><span class="wynik" id="result"></span></p></span>
+    <span class="wynik" id="result"></span>
+</div>
+
+</div>
+<div>
+<hr style="height: 5px; background: darkred; border: 0px;">
+</div>
+<button class="colorchange" type="button" onclick="LightThemeBackground()">Jasny Motyw</button>
+<button class="colorchange" type="button" onclick="DarkThemeBackground()">Ciemny Motyw</button>
+<button class="colorchange" type="button" onclick="AddClock()">Lista</button>
+
+<p id="odczyt" class="piekno"></p>
+
+<footer style="bottom:0">
+<p>
+    <button id="random" class="buttonR" type="button" onclick="RandonNumber()">R</button>
+</p>
+</footer>
+
+</body>
+
+
+<script>
+function AddClock()
+{
+    let xxx =prompt("Podaj liczbę które maja zostać wyświetlone");
+    var clock = parseInt(xxx);
+    var tab = new Array(clock);
+    if (clock != null)
+    {
+          
+for(var i = 0 ;i < clock; i++)
+{
+    if((i+1)% 5)
+    {
+        tab[i] = (i+1).toString();
+    }
+    else{
+        tab[i]= "pieć"
+    }
+}
+    }
+    document.getElementById('odczyt').textContent = tab.join('  ');
+}
+
+
+function RandonNumber()
+{
+
+    var number = Math.floor(Math.random() * 100);
+    document.getElementById('random').innerHTML = number;
+
+}
+
+function LightThemeBackground()
+{
+document.body.style.background = "white";
+var array = document.getElementsByClassName('tekst');
+for(var i = 0;i<array.length; i++){
+    array[i].style.color = 'purple';
+}
+}
+
+function DarkThemeBackground()
+{
+    document.body.style.background = 'darkgray';
+var array = document.getElementsByClassName('tekst');
+for(var i = 0;i<array.length; i++)
+{
+    array[i].style.color = 'blue';
+}
+
+}
+
+
+function Calculator(operator) 
+{
+    var a = document.getElementById('a').value;
+    var b = document.getElementById('b').value;  
+ 
+    switch(operator) 
+    {
+        case '+':
+            var result = parseFloat(a) + parseFloat(b);         
+        break;
+        case '-':
+            var result = parseFloat(a) - parseFloat(b);         
+        break;  
+        case '*':
+            var result = parseFloat(a) * parseFloat(b);         
+        break;  
+        case '/':
+            var result = parseFloat(a) / parseFloat(b);         
+        break;
+        case 'x<sup>y</sup>' :
+        var result = Math.pow(parseFloat(a), parseFloat(b)); 
+        break;
+    }
+ 
+    document.getElementById('result').innerHTML  =  result;
+}
+// Wykonał Kamil Gajewicz
+</script>
+</script>
+</html> 
